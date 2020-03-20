@@ -91,3 +91,12 @@ while(f && f1){
     console.log(f1[1]);
     f1 = reg2.exec(files);
 }
+
+//match passwords that are greater than 
+//5 characters long, do not begin with numbers, 
+//and have two consecutive digits.
+let sampleWord = "banana12";
+let pwRegex = /^\D(?=\w{5})(?=\w*\d{2})/; // Change this line
+let result = pwRegex.test(sampleWord);
+
+console.log(result)
