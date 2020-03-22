@@ -41,3 +41,30 @@ function bouncer(arr) {
   let e = bouncer([null, NaN, 1, 2, undefined]); // should return [1, 2]
   console.log(e);
   
+  function getIndexToIns(arr, num) {
+    arr.sort(function(a, b){return a-b});
+    let low = 0,x;
+    for (x in arr) {
+      if (arr[x] < num){
+        low++
+      } else {
+        break;
+      }
+    }
+    return low;
+  }
+  
+  let g1 = getIndexToIns([10, 20, 30, 40, 50], 35); // should return 3
+  console.log(g1);
+  let h1 = getIndexToIns([10, 20, 30, 40, 50], 30) //should return 2
+  console.log(h1);
+  let i1 = getIndexToIns([40, 60], 50); // should return 1
+  console.log(i1);
+  let j1 = getIndexToIns([3, 10, 5], 3); // should return 0
+  console.log(j1);
+  let k1 = getIndexToIns([], 1); //should return 0
+  console.log(k1);
+  let l1 = getIndexToIns([2, 5, 10], 15); // should return 3
+  console.log(l1);
+  let m1 = getIndexToIns([5, 3, 20, 3], 5) //should return 2
+  console.log(m1);
