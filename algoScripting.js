@@ -28,5 +28,16 @@ console.log(f)
 console.log(g)
 console.log(h)
 
-
+function bouncer(arr) {
+    return arr.filter(Boolean);
+  }
+  
+  let b = bouncer([7, "ate", "", false, 9]); // should return [7, "ate", 9]
+  console.log(b);
+  let c = bouncer(["a", "b", "c"]); // should return ["a", "b", "c"]
+  console.log(c);
+  let d = bouncer([false, null, 0, NaN, undefined, ""]); //should return []
+  console.log(d);
+  let e = bouncer([null, NaN, 1, 2, undefined]); // should return [1, 2]
+  console.log(e);
   
