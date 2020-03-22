@@ -82,3 +82,25 @@ function bouncer(arr) {
   console.log(m3);
   let m2 = mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]); //should return true
   console.log(m2);
+
+  function chunkArrayInGroups(arr, size) {
+    let x = 0, arr2 = [];
+    while (size+x <= arr.length){
+      arr2.push(arr.slice(x,x+size))
+      x+=size;
+    }
+    if (x < arr.length){
+    arr2.push(arr.slice(x))}
+    return arr2;
+  }
+  
+  let c1 = chunkArrayInGroups(["a", "b", "c", "d"], 2); //should return [["a", "b"], ["c", "d"]]
+  console.log(c1);
+  let c2 = chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3) //should return [[0, 1, 2], [3, 4, 5]]
+  console.log(c2);
+  let c3 = chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2) //should return [[0, 1], [2, 3], [4, 5]]
+  console.log(c3);
+  let c4 = chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4) //should return [[0, 1, 2, 3], [4, 5]]
+  console.log(c4);
+  let c5 = chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3) //should return [[0, 1, 2], [3, 4, 5], [6]]
+  console.log(c5);
