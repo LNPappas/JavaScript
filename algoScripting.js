@@ -68,3 +68,17 @@ function bouncer(arr) {
   console.log(l1);
   let m1 = getIndexToIns([5, 3, 20, 3], 5) //should return 2
   console.log(m1);
+
+  function mutation([target, test]) {
+    target = target.toLowerCase();
+    test = test.toLowerCase();
+    for (var i = 0; i<test.length; i++){
+      if (target.indexOf(test[i])<0){ return false}
+    }
+    return true
+  }
+  
+  let m3 = mutation(["hello", "hey"]); //should return false
+  console.log(m3);
+  let m2 = mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]); //should return true
+  console.log(m2);
