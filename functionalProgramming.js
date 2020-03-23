@@ -293,3 +293,19 @@ const ratings = watchList.map(rat => ({title: rat.Title, rating: rat.imdbRating}
 console.log(ratings);
 const rate = watchList.map(({Title: title, imdbRating: rating}) => ({title, rating}));
 console.log(rate);
+
+// Implement map on a Prototype
+// The global variable
+var s = [23, 65, 98, 5];
+
+Array.prototype.myMap = function(callback){
+  var newArray = [];
+  this.forEach(a => newArray.push(callback(a)));
+  return newArray;
+
+};
+
+var new_s = s.myMap(function(item){
+  return item * 2;
+});
+console.log(new_s);
