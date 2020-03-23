@@ -357,3 +357,12 @@ function sliceArray(anim, beginSlice, endSlice) {
   var second = [4, 5];
   let no = nonMutatingConcat(first, second);
   console.log(no);
+
+  //Add Elements to the End of an Array Using concat Instead of push
+  function nonMutatingPush(original, newItem) {
+    return original.concat(newItem);
+  }
+  var first = [1, 2, 3];
+  var second = [4, 5];
+  let c = nonMutatingPush(first, second);
+  console.log(c);
