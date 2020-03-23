@@ -311,7 +311,23 @@ var new_s = s.myMap(function(item){
 console.log(new_s);
 
 // Use the filter Method to Extract Data from an Array
+// with the map funtion.
 const filteredList1 = watchList.map(m => { return ({title: m.Title, rating: m.imdbRating})}).filter(m => { return parseFloat(m.rating) >= 8.0});
 console.log(filteredList1);
 const filteredList2 = watchList.map(function(e) {return {title: e.Title, rating: e.imdbRating};}).filter(e=> e.rating >= 8);
-console.log(filteredList2); 
+console.log(filteredList2);
+
+//Implement the filter Method on a Prototype
+// The global variable
+var s = [23, 65, 98, 5];
+
+Array.prototype.myFilter = function(callback){
+  var newArray = [];
+  this.forEach((a) => {if(callback(a) == true){newArray.push(a);}});
+  return newArray;
+};
+
+var new_s2 = s.myFilter(function(item){
+  return item % 2 === 1;
+});
+console.log(new_s2);
