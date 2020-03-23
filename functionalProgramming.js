@@ -146,4 +146,30 @@ var newValue = incrementer(fixedValue); // Should equal 5
 console.log(newValue);
 console.log(fixedValue); // Should print 4
 
-//
+//Refactor Global Variables Out of Functions
+// The global variable
+var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+
+function add (l, bookName) {
+  let list = [...l]
+  list.push(bookName);
+  return list;
+}
+function remove (l, bookName) {
+  let list = [...l]
+  var book_index = list.indexOf(bookName);
+  if (book_index >= 0) {
+
+    list.splice(book_index, 1);
+    return list;
+    }
+}
+
+var newBookList = add(bookList, 'A Brief History of Time');
+var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
+var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
+
+console.log(bookList);
+console.log(newBookList);
+console.log(newerBookList);
+console.log(newestBookList);
