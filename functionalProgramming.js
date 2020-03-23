@@ -348,3 +348,12 @@ function sliceArray(anim, beginSlice, endSlice) {
   var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
   let nonM = nonMutatingSplice(inputCities);
   console.log(nonM);
+
+  // Combine Two Arrays Using the concat Method
+  function nonMutatingConcat(original, attach) {
+    return original.concat(attach);
+  }
+  var first = [1, 2, 3];
+  var second = [4, 5];
+  let no = nonMutatingConcat(first, second);
+  console.log(no);
