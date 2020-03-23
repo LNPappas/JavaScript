@@ -309,3 +309,9 @@ var new_s = s.myMap(function(item){
   return item * 2;
 });
 console.log(new_s);
+
+// Use the filter Method to Extract Data from an Array
+const filteredList1 = watchList.map(m => { return ({title: m.Title, rating: m.imdbRating})}).filter(m => { return parseFloat(m.rating) >= 8.0});
+console.log(filteredList1);
+const filteredList2 = watchList.map(function(e) {return {title: e.Title, rating: e.imdbRating};}).filter(e=> e.rating >= 8);
+console.log(filteredList2); 
