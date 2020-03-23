@@ -366,3 +366,19 @@ function sliceArray(anim, beginSlice, endSlice) {
   var second = [4, 5];
   let c = nonMutatingPush(first, second);
   console.log(c);
+ 
+  // Use the reduce Method to Analyze Data
+  // reduce(accumulator (return value),current element, index of current, array)
+  function getRating(watchList){
+    let total = 0;
+    var averageRating = watchList.reduce((sum, movie) => {
+     if (movie.Director == 'Christopher Nolan'){
+       total +=1;
+       return sum +=parseFloat(movie.imdbRating);
+     } 
+     return sum
+    },0)/total;
+  
+    return averageRating;
+  }
+  console.log(getRating(watchList));
