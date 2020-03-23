@@ -339,4 +339,12 @@ function sliceArray(anim, beginSlice, endSlice) {
   var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
   var s = sliceArray(inputAnim, 1, 3);
   console.log(s)
-  
+
+
+  // remove elements using slice, not splice
+  function nonMutatingSplice(cities) {
+    return cities.slice(0,3);
+  }
+  var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+  let nonM = nonMutatingSplice(inputCities);
+  console.log(nonM);
