@@ -331,3 +331,12 @@ var new_s2 = s.myFilter(function(item){
   return item % 2 === 1;
 });
 console.log(new_s2);
+
+// Return Part of an Array Using the slice Method
+function sliceArray(anim, beginSlice, endSlice) {
+    return anim.slice(beginSlice, endSlice);
+  }
+  var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+  var s = sliceArray(inputAnim, 1, 3);
+  console.log(s)
+  
