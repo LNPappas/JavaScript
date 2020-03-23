@@ -122,16 +122,28 @@ var Window = function(tabs) {
     .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
     .join(workWindow.tabClose(1).tabOpen());
   console.log(finalTabs.tabs);
-
+console.log();
 // Avoid Mutations and Side Effects Using Functional Programming
 // Fill in the code for the function incrementer so it returns 
 // the value of the global variable fixedValue increased by one.
   // The global variable
 var fixedValue = 4;
 
-function incrementer () {
+function incrementer1 () {
 return fixedValue+1
 }
-var newValue = incrementer(); // Should equal 5
+var newValue = incrementer1(); // Should equal 5
 console.log(newValue);
 console.log(fixedValue); // Should print 4
+
+// Pass Arguments to Avoid External Dependence in a Function
+// The global variable
+var fixedValue = 4;
+function incrementer (v) {
+  return v+1;
+}
+var newValue = incrementer(fixedValue); // Should equal 5
+console.log(newValue);
+console.log(fixedValue); // Should print 4
+
+//
