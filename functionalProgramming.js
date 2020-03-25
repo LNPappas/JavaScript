@@ -394,3 +394,22 @@ function sliceArray(anim, beginSlice, endSlice) {
   
   const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
   console.log(squaredIntegers);
+
+  // Sort an Array Alphabetically using the sort Method
+
+  function alphabeticalOrder(arr) {
+    return arr.sort()
+  }
+  let alph = alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
+  
+  console.log(alph);
+
+  // Return a Sorted Array Without Changing the Original Array
+  var globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+  let a = [...arr];
+  return a.sort()
+}
+let nonMu = nonMutatingSort(globalArray);
+console.log(nonMu);
+
