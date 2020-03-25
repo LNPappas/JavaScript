@@ -438,3 +438,11 @@ function urlSlug(title) {
 
 var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
 console.log(winterComing);
+
+// every method 
+function checkPositive(arr) {
+    return arr.every(c => c > 0);
+  }
+  let cP = checkPositive([1, 2, 3, -4, 5]);
+  console.log(cP);
+
