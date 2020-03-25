@@ -413,3 +413,11 @@ function nonMutatingSort(arr) {
 let nonMu = nonMutatingSort(globalArray);
 console.log(nonMu);
 
+// Split a String into an Array Using the split Method
+function splitify(str) {
+    return str.split(/\W/)
+  }
+  let spliti = splitify("Hello World,I-am code");
+  console.log(spliti);
+
+  
