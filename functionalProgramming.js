@@ -420,4 +420,10 @@ function splitify(str) {
   let spliti = splitify("Hello World,I-am code");
   console.log(spliti);
 
-  
+  // Combine an Array into a String Using the join Method
+  function sentensify(str) {
+    let arr = str.split(/\W/);
+    return arr.join(' ')
+  }
+  let sen = sentensify("May-the-force-be-with-you");
+  console.log(sen);
