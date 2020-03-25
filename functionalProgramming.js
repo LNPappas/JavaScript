@@ -427,3 +427,14 @@ function splitify(str) {
   }
   let sen = sentensify("May-the-force-be-with-you");
   console.log(sen);
+
+  // Apply Functional Programming to Convert Strings to URL Slugs
+  // The global variable
+var globalTitle = " Winter Is  Coming";
+
+function urlSlug(title) {
+    return title.toLowerCase().split(/\W/).filter((o) => {return o !== '';}).join('-')
+}
+
+var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
+console.log(winterComing);
