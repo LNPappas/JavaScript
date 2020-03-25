@@ -453,3 +453,15 @@ function checkPositive2(arr) {
   }
   let cPo = checkPositive2([1, 2, 3, -4, 5]);
   console.log(cPo);
+
+  // Introduction to Currying and Partial Application
+  // arity = # arguments func requires
+  // currying = convert N arity into N func of arity 1
+  // partial application = apply several args to func at a 
+  // time and return another func that is applied to more args
+  function add(x) {
+    return y => z => x+y+z;
+   };
+   
+   let ad = add(10)(20)(30);
+   console.log(ad);
