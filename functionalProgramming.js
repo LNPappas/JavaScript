@@ -459,9 +459,9 @@ function checkPositive2(arr) {
   // currying = convert N arity into N func of arity 1
   // partial application = apply several args to func at a 
   // time and return another func that is applied to more args
-  function add(x) {
+  function add1(x) {
     return y => z => x+y+z;
    };
    
-   let ad = add(10)(20)(30);
+   let ad = add1(10)(20)(30);
    console.log(ad);
