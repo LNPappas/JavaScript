@@ -173,3 +173,27 @@ function sumAll(arr) {
   console.log(pE1);
   console.log(pE2);
   console.log(pE3);
+  console.log();
+  function fearNotLetter(str) {
+    var prev = str.charCodeAt(0);
+    for (var i = 1; i < str.length; i++){
+      if (str.charCodeAt(i) != prev+1){
+        return String.fromCharCode(prev+1);
+      } else {
+        prev = str.charCodeAt(i);
+      }
+    }
+    return undefined
+  }
+  
+  let fNL = fearNotLetter("abce");
+  console.log(fNL);
+  
+  let fNL1 = fearNotLetter("abcdefghjklmno") //should return "i".
+  let fNL2 = fearNotLetter("stvwx") //should return "u".
+  let fNL3 = fearNotLetter("bcdf") //should return "e".
+  let fNL4 = fearNotLetter("abcdefghijklmnopqrstuvwxyz") //should return undefined.
+  console.log(fNL1);
+  console.log(fNL2);
+  console.log(fNL3);
+  console.log(fNL4);
