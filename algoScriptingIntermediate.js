@@ -197,3 +197,21 @@ function sumAll(arr) {
   console.log(fNL2);
   console.log(fNL3);
   console.log(fNL4);
+
+  // get all arrays seperatly, not as multi dimentional array
+function uniteUnique(...arr) {
+    // join all arrays into a single array
+    let a = [].concat(...arr);
+    //return a set of the original array as an array
+    // Set is an object to create new Set()
+    // use ... for unknown # of arguments
+    return [...new Set(a)];
+  }
+  
+  let uU1 = uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) //should return [1, 3, 2, 5, 4].
+  let uU2 = uniteUnique([1, 2, 3], [5, 2, 1]) //should return [1, 2, 3, 5].
+  let uU3 = uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) //should return [1, 2, 3, 5, 4, 6, 7, 8].
+  console.log();
+  console.log(uU1);
+  console.log(uU2);
+  console.log(uU3);
