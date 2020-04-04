@@ -140,3 +140,36 @@ function sumAll(arr) {
   console.log(mR4)
   let mR5 = myReplace("Let us get back to more Coding", "Coding", "algorithms") //should return "Let us get back to more Algorithms".
   console.log(mR5)
+
+  function pairElement(str) {
+    let s = str.split('');
+    let result = []
+    var i;
+    for (i in s){
+      switch (s[i]){
+        case 'T':
+          result.push(['T','A'])
+          break
+        case 'A':
+          result.push(['A','T'])
+          break
+        case 'C':
+          result.push(['C','G'])
+          break
+        case 'G':
+          result.push(['G','C'])
+          break
+      }
+    }
+    return result;
+  }
+  
+  let pE = pairElement("GCG");
+  console.log(pE);
+  
+  let pE1 = pairElement("ATCGA") //should return [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]].
+  let pE2 = pairElement("TTGAG") //should return [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]].
+  let pE3 = pairElement("CTCTA") //should return [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]].
+  console.log(pE1);
+  console.log(pE2);
+  console.log(pE3);
