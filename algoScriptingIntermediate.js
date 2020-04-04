@@ -87,3 +87,31 @@ function sumAll(arr) {
   console.log(sC4);
   let sC5 = spinalCase("AllThe-small Things") //should return "all-the-small-things".
   console.log(sC5);
+
+  function translatePigLatin(str) {
+    //  starts with vowel
+    if(str.match(/^[aeiou]/)){
+      return str + 'way';
+    } 
+    // get up to first vowel
+    let c = str.match(/^[^aeiou]+/)[0];
+    // return substring first vowel to end, plus string before first vowel, + 'ay'
+    return str.substring(c.length) + c +'ay';
+  }
+  
+  let tPL1 = translatePigLatin("california") //should return "aliforniacay".
+  console.log(tPL1);
+  let tPL2 = translatePigLatin("paragraphs") //should return "aragraphspay".
+  console.log(tPL2);
+  let tPL3 = translatePigLatin("glove") //should return "oveglay".
+  console.log(tPL3);
+  let tPL4 = translatePigLatin("algorithm") //should return "algorithmway".
+  console.log(tPL4);
+  let tPL5 = translatePigLatin("eight") //should return "eightway".
+  console.log(tPL5);
+  //Should handle words where the first vowel comes in the middle of the word. 
+  let tPL6 = translatePigLatin("schwartz") //should return "artzschway".
+  console.log(tPL6);
+  //Should handle words without vowels. 
+  let tPL7 = translatePigLatin("rhythm") //should return "rhythmay".
+  console.log(tPL7);
