@@ -115,3 +115,28 @@ function sumAll(arr) {
   //Should handle words without vowels. 
   let tPL7 = translatePigLatin("rhythm") //should return "rhythmay".
   console.log(tPL7);
+
+  function myReplace(str, before, after) {
+    // get the index of the original word (before)
+    let i = str.indexOf(before);
+    // if the original word starts with upper case make sure the new word also starts with uppercase
+    if (str[i] === str[i].toUpperCase()){
+        // convert first letter to uppercase and add remainder of word/string
+      after = after.charAt(0).toUpperCase() + after.slice(1);
+    }
+    // use replace to replace before word with after word
+    return str.replace(before, after);
+  }
+  
+  let mR = myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+  console.log(mR)
+  let mR1 = myReplace("Let us go to the store", "store", "mall") //should return "Let us go to the mall".
+  console.log(mR1)
+  let mR2 = myReplace("He is Sleeping on the couch", "Sleeping", "sitting") //should return "He is Sitting on the couch".
+  console.log(mR2)
+  let mR3 = myReplace("This has a spellngi error", "spellngi", "spelling") //should return "This has a spelling error".
+  console.log(mR3)
+  let mR4 = myReplace("His name is Tom", "Tom", "john") //should return "His name is John".
+  console.log(mR4)
+  let mR5 = myReplace("Let us get back to more Coding", "Coding", "algorithms") //should return "Let us get back to more Algorithms".
+  console.log(mR5)
