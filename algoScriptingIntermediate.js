@@ -215,3 +215,44 @@ function uniteUnique(...arr) {
   console.log(uU1);
   console.log(uU2);
   console.log(uU3);
+
+  function convertHTML(str) {
+    var i;
+    let arr = str.split('');
+    for (i in arr){
+      switch (arr[i]){
+        case '<':
+          arr[i] = '&lt;'
+          break;
+        case '>':
+          arr[i] = '&gt;'
+          break;
+        case '&':
+          arr[i] = '&amp;'
+          break;
+        case '\'':
+          arr[i] = '&apos;'
+          break;
+        case '\"':
+          arr[i] = '&quot;'
+          break;
+      }
+    }
+    return arr.join('');
+  }
+  
+  let cH1 = convertHTML("Dolce & Gabbana") //should return Dolce &amp; Gabbana.
+  let cH2 =convertHTML("Hamburgers < Pizza < Tacos") //should return Hamburgers &lt; Pizza &lt; Tacos.
+  let cH3 =convertHTML("Sixty > twelve") //should return Sixty &gt; twelve.
+  let cH4 =convertHTML('Stuff in "quotation marks"') //should return Stuff in &quot;quotation marks&quot;.
+  let cH5 =convertHTML("Schindler's List") //should return Schindler&apos;s List.
+  let cH6 =convertHTML("<>") //should return &lt;&gt;.
+  let cH7 =convertHTML("abc") //should return abc.
+  console.log()
+  console.log(cH1)
+  console.log(cH2)
+  console.log(cH3)
+  console.log(cH4)
+  console.log(cH5)
+  console.log(cH6)
+  console.log(cH7)
