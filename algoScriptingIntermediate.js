@@ -256,3 +256,30 @@ function uniteUnique(...arr) {
   console.log(cH5)
   console.log(cH6)
   console.log(cH7)
+
+  function sumFibs(num) {
+    let a=1,b=0,temp=a,sum=0;
+    while (a <= num){
+      temp = a;
+      a = b;
+      b = b+temp; 
+      if (a%2!==0 && a<=num){
+        sum +=a
+      }
+    }
+    return sum
+  }
+  
+  let sF2 =sumFibs(1) //should return a number.
+  let sF3 =sumFibs(1000) //should return 1785.
+  let sF4 =sumFibs(4000000) //should return 4613732.
+  let sF5 =sumFibs(4) //should return 5.
+  let sF6 =sumFibs(75024) //should return 60696.
+  let sF7 =sumFibs(75025) //should return 135721.
+  console.log()
+  console.log(sF2)
+  console.log(sF3)
+  console.log(sF4)
+  console.log(sF5)
+  console.log(sF6)
+  console.log(sF7)
