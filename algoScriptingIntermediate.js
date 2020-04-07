@@ -506,3 +506,21 @@ function uniteUnique(...arr) {
   console.log(b10)
   console.log(b11)
   console.log()
+
+  function orbitalPeriod(arr) {
+    var GM = 398600.4418;
+    var earthRadius = 6367.4447;
+    let i = 1, o;
+    for(i in arr){
+        o = Math.round(2*Math.PI*(((arr[i].avgAlt+earthRadius)**3)/GM)**(1/2));
+        arr[i]
+        delete arr[i].avgAlt;
+        arr[i].orbitalPeriod = o;
+    }
+    return arr
+  }
+  
+  let oP = orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); // should return [{name: "sputnik", orbitalPeriod: 86400}].
+  console.log(oP);
+  let oP2 = orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]) // should return [{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}]
+  console.log(oP2);
