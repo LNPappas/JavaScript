@@ -399,3 +399,29 @@ function uniteUnique(...arr) {
   let bA1 = binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"); // should return "I love FreeCodeCamp!"
   console.log(bA1);
   console.log();
+
+  function truthCheck(collection, pre) {
+    let answer = true
+    collection.forEach(i => {if(!i[pre]) answer = false})
+    return answer
+  }
+  
+  let tC = truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"); // should return true.
+  let tC0 = truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age") // should return false.
+  let tC1 = truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age") //should return false.
+  let tC2 = truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true}, {"name": "FastForward", "onBoat": null}], "onBoat") //should return false
+  let tC3 = truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true, "alias": "Repete"}, {"name": "FastForward", "onBoat": true}], "onBoat") //should return true
+  let tC4 = truthCheck([{"single": "yes"}], "single") //should return true
+  let tC5 = truthCheck([{"single": ""}, {"single": "double"}], "single") //should return false
+  let tC6 = truthCheck([{"single": "double"}, {"single": undefined}], "single") //should return false
+  let tC7 = truthCheck([{"single": "double"}, {"single": NaN}], "single") //should return false
+  console.log(tC);
+  console.log(tC0);
+  console.log(tC1);
+  console.log(tC2);
+  console.log(tC3);
+  console.log(tC4);
+  console.log(tC5);
+  console.log(tC6);
+  console.log(tC7);
+  console.log();
