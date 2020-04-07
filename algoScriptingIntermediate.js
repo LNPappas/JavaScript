@@ -345,3 +345,25 @@ function uniteUnique(...arr) {
   console.log(sCn3)
   console.log(sCn4)
   console.log();
+
+  function dropElements(arr, func) {
+    while (arr.length > 0 && !func(arr[0])) {
+      arr.shift();
+    }
+    return arr;
+  }
+  
+  let dE = dropElements([1, 2, 3], function(n) {return n < 3; }); // should return [ 1, 2, 3]
+  console.log(dE)
+  let dE1 = dropElements([1, 2, 3, 4], function(n) {return n >= 3;}) // should return [3, 4].
+  let dE2 = dropElements([0, 1, 0, 1], function(n) {return n === 1;}) // should return [1, 0, 1].
+  let dE3 = dropElements([1, 2, 3], function(n) {return n > 0;}) // should return [1, 2, 3].
+  let dE4 = dropElements([1, 2, 3, 4], function(n) {return n > 5;}) // should return [].
+  let dE5 = dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}) // should return [7, 4].
+  
+  console.log(dE1)
+  console.log(dE2)
+  console.log(dE3)
+  console.log(dE4)
+  console.log(dE5)
+  console.log();
