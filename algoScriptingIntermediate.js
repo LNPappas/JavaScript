@@ -425,3 +425,24 @@ function uniteUnique(...arr) {
   console.log(tC6);
   console.log(tC7);
   console.log();
+
+  function addTogether(a, b) {
+    if (typeof a !== "number"){
+      return undefined
+    } 
+    let sum = b => 
+    typeof b === "number" ? a + b : undefined;
+    return typeof b === "undefined" ? b => sum(b) : sum(b);
+  }
+  
+  
+  let aT = addTogether(2,3); // should return 5
+  console.log(aT)
+  let aT1 = addTogether(2)(3) // should return 5.
+  console.log(aT1)
+  addTogether("http://bit.ly/IqT6zt") //should return undefined.
+  let aT2 = addTogether(2, "3") // should return undefined.
+  let aT3 = addTogether(2)([3]) // should return undefined.
+  console.log(aT2)
+  console.log(aT3)
+  console.log()
