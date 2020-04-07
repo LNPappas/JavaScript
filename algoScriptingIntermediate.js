@@ -386,3 +386,16 @@ function uniteUnique(...arr) {
   console.log(srA3);
   console.log(srA4);
   console.log();
+
+  function binaryAgent(str) {
+    let a = [];
+    let arr = str.split(' ').forEach(i => {a.push(String.fromCharCode(parseInt(i, 2)))});
+    return a.join('');
+  }
+  
+  let bA = binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"); //should return "Aren't bonfires fun!?"
+  console.log(bA);
+  
+  let bA1 = binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"); // should return "I love FreeCodeCamp!"
+  console.log(bA1);
+  console.log();
