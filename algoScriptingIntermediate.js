@@ -283,3 +283,31 @@ function uniteUnique(...arr) {
   console.log(sF5)
   console.log(sF6)
   console.log(sF7)
+
+  function sumPrimes(num) {
+    var res = 0;
+  
+    function getPrimes(max) {
+      var sieve = [],i,j;
+      var primes = [];
+      for (i = 2; i <= max; ++i) {
+        if (!sieve[i]) {
+          primes.push(i);
+          for (j = i << 1; j <= max; j += i) {
+            sieve[j] = true;
+          }
+        }
+      }
+      return primes;
+    }
+    var primes = getPrimes(num);
+    for (var p = 0; p < primes.length; p++) {
+      res += primes[p];
+    }
+    return res;
+  }
+  console.log();
+  let sP = sumPrimes(10); // should return 17
+  console.log(sP);
+  let sP2 = sumPrimes(977); // should return 73156.
+  console.log(sP2);
