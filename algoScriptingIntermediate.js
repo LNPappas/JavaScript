@@ -311,3 +311,37 @@ function uniteUnique(...arr) {
   console.log(sP);
   let sP2 = sumPrimes(977); // should return 73156.
   console.log(sP2);
+
+  console.log();
+  function smallestCommons(arr) {
+    let a = arr.sort((a,b)=>{return a-b})
+    let all = []
+    for (var i = a[0]; i<a[1]; i++){
+      all.push(i);
+    }
+    let num = a[1];
+    let div = false;
+    var j = 0;
+    while (j<all.length){
+      if (num%all[j] == 0){
+        j++
+      } else {
+        j = 0;
+        num = num+a[1]
+      }
+    }
+    return num;
+  }
+  
+  
+  let sCn = smallestCommons([1,5]) // should return 60;
+  console.log(sCn)
+  let sCn1 = smallestCommons([5, 1]) // should return 60.
+  let sCn2 = smallestCommons([2, 10]) // should return 2520.
+  let sCn3 = smallestCommons([1, 13]) // should return 360360.
+  let sCn4 = smallestCommons([23, 18]) // should return 6056820.
+  console.log(sCn1)
+  console.log(sCn2)
+  console.log(sCn3)
+  console.log(sCn4)
+  console.log();
