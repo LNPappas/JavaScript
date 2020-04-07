@@ -367,3 +367,22 @@ function uniteUnique(...arr) {
   console.log(dE4)
   console.log(dE5)
   console.log();
+
+  function steamrollArray(arr, f=[]) {
+    arr.forEach(i=> {if (Array.isArray(i)) steamrollArray(i, f); else f.push(i);});
+    return f;
+  }
+  
+  
+  
+  let srA = steamrollArray([1, [2], [3, [[4]]]]);
+  console.log(srA);
+  let srA1 = steamrollArray([[["a"]], [["b"]]]) //should return ["a", "b"].
+  let srA2 = steamrollArray([1, [2], [3, [[4]]]]) //should return [1, 2, 3, 4].
+  let srA3 = steamrollArray([1, [], [3, [[4]]]]) //should return [1, 3, 4].
+  let srA4 = steamrollArray([1, {}, [3, [[4]]]]) //should return [1, {}, 3, 4].
+  console.log(srA1);
+  console.log(srA2);
+  console.log(srA3);
+  console.log(srA4);
+  console.log();
