@@ -446,3 +446,63 @@ function uniteUnique(...arr) {
   console.log(aT2)
   console.log(aT3)
   console.log()
+
+  var Person = function(firstAndLast) {
+    var fullName = firstAndLast;
+  
+    this.getFirstName = function() {
+      return fullName.split(" ")[0];
+    };
+  
+    this.getLastName = function() {
+      return fullName.split(" ")[1];
+    };
+  
+    this.getFullName = function() {
+      return fullName;
+    };
+  
+    this.setFirstName = function(name) {
+      fullName = name + " " + fullName.split(" ")[1];
+    };
+  
+    this.setLastName = function(name) {
+      fullName = fullName.split(" ")[0] + " " + name;
+    };
+  
+    this.setFullName = function(name) {
+      fullName = name;
+    };
+  };
+  
+  var bob = new Person('Bob Ross');
+  let b = bob.getFullName();
+  let b0 = Object.keys(bob).length //should return 6.
+  let b1 = bob instanceof Person //should return true.
+  let b2 = bob.firstName //should return undefined.
+  let b3 = bob.lastName //should return undefined.
+  let b4 = bob.getFirstName() //should return "Bob".
+  let b5 = bob.getLastName() //should return "Ross".
+  let b6 = bob.getFullName() //should return "Bob Ross".
+  bob.setFirstName("Haskell")
+  let b7 = bob.getFullName() //should return "Haskell Ross" after 
+  bob.setLastName("Curry")
+  let b8 = bob.getFullName() //should return "Haskell Curry" after bob.setLastName("Curry").
+  bob.setFullName("Haskell Curry")
+  let b9 = bob.getFullName() //should return "Haskell Curry" after bob.setFullName("Haskell Curry").
+  let b10 = bob.getFirstName() //should return "Haskell" after bob.setFullName("Haskell Curry").
+  let b11 = bob.getLastName() //should return "Curry" after bob.setFullName("Haskell Curry").
+  console.log(b)
+  console.log(b0)
+  console.log(b1)
+  console.log(b2)
+  console.log(b3)
+  console.log(b4)
+  console.log(b5)
+  console.log(b6)
+  console.log(b7)
+  console.log(b8)
+  console.log(b9)
+  console.log(b10)
+  console.log(b11)
+  console.log()
